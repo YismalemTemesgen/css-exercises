@@ -1,1 +1,15 @@
-/* Add CSS Styling */
+.odd-item {
+    background-color:rgb(255, 167, 167); /* Light red/pink በ HEX */
+    font-family: Verdana, "DejaVu Sans", sans-serif;
+}
+#second-item {
+    color: #0000ff; /* Blue በ HEX */
+    font-size: 36px;
+}
+.large-text {
+    font-size: 24px;
+}
+#fourth-item {
+    background-color: hsl(120, 100%, 75%); /* Light green በ HEX */
+    font-weight: bold;
+}
