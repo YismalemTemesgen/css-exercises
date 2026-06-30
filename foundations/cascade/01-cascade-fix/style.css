@@ -17,26 +17,36 @@ body {
   font-size: 22px;
 }
 
-.confirm {
-  background: green;
-  color: white;
-  font-weight: bold;
-} 
-
+/* Fix 1: Rule Order (Order of Appearance)
+  The `.button` base styles are placed first, and the specific `.confirm` 
+  modifier class is moved below it. Since they have equal specificity, 
+  the lower rule (`.confirm`) successfully overrides the base button styles.
+*/
 .button {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   font-size: 20px;
 }
 
+.confirm {
+  background: green;
+  color: white;
+  font-weight: bold;
+} 
+
+/* Fix 2: Specificity Conflict
+  Changed `div.text` to just `.text`. This lowers its specificity score 
+  from 11 down to 10. This allows the `.child` class (which also has a score of 10) 
+  to properly apply its own styles since it appears lower down in the file.
+*/
+.text {
+  color: rgb(0, 0, 0);
+  font-size: 22px;
+  font-weight: 100;
+}
+
 .child {
   color: rgb(0, 0, 0);
   font-weight: 800;
   font-size: 14px;
-}
-
-div.text {
-  color: rgb(0, 0, 0);
-  font-size: 22px;
-  font-weight: 100;
 }
